@@ -68,9 +68,54 @@ The owner logs into the web dashboard and selects a date range for analysis. The
 
 \section{Use Case Diagrams}
 \label{section:use-case-diagrams}
-<TIP: Include a UML Use Case Diagram that shows all actors and
-their relationships to the use cases you described.
-Also provide the written description for each use case. />
+
+The Prometheus system utilizes a dual-interface approach to serve its distinct user groups. The following diagrams and descriptions outline the functional requirements for both Gym Members and Gym Owners, as well as the automated interactions performed by the system itself.
+
+\subsection{Gym Member Use Cases}
+The member-facing use cases focus on personal workout efficiency, progress tracking, and data privacy.
+
+\begin{figure}[h]
+    \centering
+    % [PLACEHOLDER: Insert Member Use Case Diagram Image Here]
+    % \includegraphics[width=0.8\textwidth]{figures/member-use-case.png}
+    \caption{Use Case Diagram for Gym Members}
+    \label{fig:member-use-case}
+\end{figure}
+
+\begin{itemize}
+    \item \textbf{UC-1: View Real-Time Machine Status:} Allows members to view a live map of the gym floor where equipment is color-coded based on availability (Green for Free, Red for Occupied)[cite: 17].
+    \item \textbf{UC-2: Subscribe to Vacancy Notifications:} Users can select specific machines or exercises; the system sends a push notification the moment the required equipment becomes vacant[cite: 18].
+    \item \textbf{UC-3: Log Workout Progress:} A standard interface for logging weights, sets, and reps, which are then visualized using progress charts[cite: 14].
+    \item \textbf{UC-4: Generate AI Workout Routine:} Uses an LLM or structured logic to create a personalized plan based on the user's physical profile and goals[cite: 16].
+    \item \textbf{UC-5: Use Diet Estimator:} A tool that recommends food items and calculates nutritional needs based on the user's specific fitness objectives[cite: 15].
+    \item \textbf{UC-6: Manage Privacy \& Data Rights:} Provides members with the ability to exercise their rights under the PDPA, such as requesting a copy of their data or the deletion of their personal logs[cite: 31].
+\end{itemize}
+
+\subsection{Gym Owner Use Cases}
+The owner-facing use cases prioritize spatial intelligence, facility optimization, and business analytics.
+
+\begin{figure}[h]
+    \centering
+    % [PLACEHOLDER: Insert Owner Use Case Diagram Image Here]
+    % \includegraphics[width=0.8\textwidth]{figures/owner-use-case.png}
+    \caption{Use Case Diagram for Gym Owners}
+    \label{fig:owner-use-case}
+\end{figure}
+
+\begin{itemize}
+    \item \textbf{UC-7: Analyze Machine Traffic:} Provides a real-time overview of equipment usage states across the facility floor[cite: 20].
+    \item \textbf{UC-8: View Spatial Heatmaps:} Generates visual heatmaps to identify high-traffic hotspots and underutilized "dead zones"[cite: 23].
+    \item \textbf{UC-9: Generate Utilization Reports:} Accesses a historical database to produce daily, weekly, or monthly reports on equipment popularity and peak usage times[cite: 22].
+    \item \textbf{UC-10: Optimize Facility Layout:} Enables owners to make data-backed decisions on relocating assets to improve floor flow and utilization[cite: 23].
+    \item \textbf{UC-11: Manage Operational Schedules:} Helps owners optimize staffing, cleaning, and maintenance schedules based on real-time and historical traffic volume[cite: 25].
+\end{itemize}
+
+\subsection{System Use Case}
+This automated use case represents the core AI functionality that enables the user-facing features.
+
+\begin{itemize}
+    \item \textbf{UC-12: Detect and Update Machine State:} An automated process where the Edge Processing Unit analyzes CCTV streams, identifies occupancy via intersection logic, and transmits anonymized metadata to the cloud while discarding raw video frames[cite: 31, 33].
+\end{itemize}
 
 \section{User Interface Design}
 \label{section:user-interface-design}
