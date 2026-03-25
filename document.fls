@@ -115,9 +115,6 @@ INPUT C:\Users\Phasit\AppData\Local\Programs\MiKTeX\tex\latex\psnfss\t1ptm.fd
 INPUT C:\Users\Phasit\AppData\Local\Programs\MiKTeX\fonts\tfm\adobe\times\ptmr8t.tfm
 INPUT C:\Users\Phasit\AppData\Local\Programs\MiKTeX\tex\latex\l3backend\l3backend-pdftex.def
 INPUT C:\Users\Phasit\AppData\Local\Programs\MiKTeX\tex\latex\l3backend\l3backend-pdftex.def
-INPUT .\document.aux
-INPUT .\document.aux
-INPUT document.aux
 OUTPUT document.aux
 OUTPUT document.out
 OUTPUT document.pdf
