@@ -10,7 +10,6 @@ The Prometheus project involves multiple parties that influence or are affected 
     \item \textbf{Gym Members (Primary Users):} Individual athletes and gym patrons who utilize the facility. They are the primary consumers of the real-time occupancy data and progress tracking features. Their main interest is minimizing workout friction and maximizing time efficiency.
     \item \textbf{Gym Owners and Facility Managers (Secondary Users):} Business operators who require data-driven insights to optimize equipment placement and facility layout. They utilize the web dashboard for spatial analytics and ROI assessments.
     \item \textbf{Product Owner:} The individual responsible for the strategic vision of the Prometheus ecosystem. They ensure that the system remains compliant with data privacy regulations (PDPA/GDPR) and that the AI capabilities align with the intended problem domain.
-    \item \textbf{Data Science/AI Developers:} Technical stakeholders responsible for the development, training, and maintenance of the YOLO models and the edge-to-cloud pipeline.
 \end{itemize}
 
 \section{User Stories and Use Cases}
@@ -31,39 +30,76 @@ The following user stories define the core functional requirements from the pers
 
 The following use cases detail the interaction between the users and the Prometheus system.
 
-\subsubsection{Use Case 1: View Real-Time Machine Occupancy (Brief)}
-\textbf{Actor:} Gym Member \\
-\textbf{Goal:} To determine if specific equipment is available before moving to that station. \\
-\textbf{Description:} The member opens the Prometheus iOS application. The system retrieves the current occupancy metadata from the cloud database and displays a visual map of the gym floor. Machines are color-coded (e.g., Green for Free, Red for Occupied). The member identifies an available bench and proceeds with their workout.
+\subsubsection{Use Case 1: View and Update Real-Time Machine Status (Fully-Dressed)}
+\textbf{Primary Actor:} Gym Member \\
+\textbf{Supporting Actor:} Edge Processing Unit (System Actor) \\
+\textbf{Goal:} To allow members to identify available equipment in real-time and provide accurate live updates via the mobile application.
 
-\subsubsection{Use Case 2: Analyze Facility Utilization Trends (Casual)}
-\textbf{Actor:} Gym Owner \\
-\textbf{Goal:} To identify peak usage times and equipment popularity for business optimization. \\
-\textbf{Main Success Scenario:}
-The owner logs into the web dashboard and selects a date range for analysis. The system aggregates the historical metadata and generates a spatial heatmap and a line graph showing utilization trends. The owner observes that the power racks are consistently at 100\% capacity during 5:00 PM - 8:00 PM, while the stationary bikes are underutilized. Based on this, the owner decides to replace two bikes with an additional power rack.
-
-\subsubsection{Use Case 3: Detect and Update Machine State (Fully-Dressed)}
-\textbf{Primary Actor:} Edge Processing Unit (System Actor) \\
 \textbf{Stakeholders and Interests:}
 \begin{itemize}
-    \item \textbf{Gym Member:} Needs accurate, low-latency updates to avoid "false availability" readings.
-    \item \textbf{Gym Owner:} Needs reliable data for long-term analytics.
+    \item \textbf{Gym Member:} Needs low-latency, accurate updates to avoid "availability uncertainty" and plan their workout efficiently.
+    \item \textbf{Gym Owner:} Requires a reliable system that encourages member retention by reducing training friction.
+    \item \textbf{Product Owner:} Interested in ensuring data transparency and privacy through real-time anonymization and compliance with data protection standards.
 \end{itemize}
-\textbf{Preconditions:} The CCTV cameras are active and streaming via RTSP to the local edge hardware. The YOLO model is loaded and initialized. \\
+
+\textbf{Preconditions:}
+\begin{itemize}
+    \item The facility has at least 5 HD IP cameras active and streaming via RTSP to the local edge hardware.
+    \item The Computer Vision (CV) model is loaded and initialized on local edge-processing hardware.
+    \item The member has the Prometheus iOS application open and connected to the service.
+\end{itemize}
+
 \textbf{Main Success Scenario:}
 \begin{enumerate}
-    \item The Edge Processing Unit receives a video frame from the gym floor.
-    \item The YOLO model detects a "Person" class and a "Bench Press" class within the defined Region of Interest (ROI).
-    \item The occupancy logic detects a significant spatial overlap between the person and the machine.
-    \item The system monitors this overlap for a continuous 5-second buffer (Temporal Smoothing).
-    \item The Edge Unit extracts the "Occupied" state and the Machine ID, then discards the raw video frame.
-    \item The metadata is transmitted to the cloud database.
-    \item The cloud database triggers a WebSocket update to all active iOS clients, turning the machine icon red.
+    \item The Edge Processing Unit receives a live video frame from the gym floor.
+    \item The CV system identifies machine occupancy states within the facility.
+    \item The system validates the "Occupied" or "Free" state using internal occupancy logic.
+    \item The Edge Unit extracts anonymized metadata (coordinates and activity labels) and immediately discards the raw video to protect member privacy.
+    \item The extracted metadata is transmitted to the cloud-based data management system.
+    \item The member opens the Prometheus iOS application to view the live status of the facility.
+    \item The application displays a visual map where equipment icons are color-coded: Green for "Free" and Red for "Occupied".
+    \item The system triggers a real-time update to all active iOS clients the moment a machine state changes.
 \end{enumerate}
+
 \textbf{Extensions (Alternative Flows):}
 \begin{itemize}
-    \item \textbf{3a. Occlusion detected:} If a person walks between the camera and the machine without using it, the temporal buffer (Step 4) prevents a false "Occupied" trigger.
-    \item \textbf{5a. Network Failure:} If the edge unit cannot reach the cloud, it stores the metadata locally and syncs once the connection is restored to ensure analytics accuracy.
+    \item \textbf{4a. Occlusion Handling:} If the model momentarily loses visual track of a person, temporal smoothing logic prevents a false "Free" status trigger.
+    \item \textbf{7a. Notification Subscription:} If a member has subscribed to a specific exercise, the app sends a push notification the moment the required machine becomes vacant.
+    \item \textbf{8a. Privacy Restriction:} Members are provided with machine status indicators only and cannot view live CCTV feeds directly for security and privacy reasons.
+\end{itemize}
+
+\subsubsection{Use Case 2: Analyze Facility Utilization Trends (Fully-Dressed)}
+\textbf{Primary Actor:} Gym Owner \\
+\textbf{Goal:} To identify peak usage times and equipment popularity to optimize business operations and capital expenditure.
+
+\textbf{Stakeholders and Interests:}
+\begin{itemize}
+    \item \textbf{Gym Owner:} Needs data-backed insights to justify equipment investments (CapEx) and floor plan optimization.
+    \item \textbf{Facility Manager:} Seeks to optimize staffing, cleaning schedules, and operational efficiency based on traffic volume.
+    \item \textbf{Gym Member:} Indirectly benefits from an improved gym layout and a more frictionless training environment.
+\end{itemize}
+
+\textbf{Preconditions:}
+\begin{itemize}
+    \item Historical utilization data has been tracked and stored in the database over a period of time.
+    \item The owner has authorized access to the Prometheus Web Dashboard.
+\end{itemize}
+
+\textbf{Main Success Scenario:}
+\begin{enumerate}
+    \item The Gym Owner logs into the PC-based web dashboard.
+    \item The owner selects a date range for utilization analysis (e.g., daily, weekly, or monthly).
+    \item The system retrieves the "time-in-use" records for every machine from the historical database.
+    \item The dashboard generates visual heatmaps of the facility to identify hotspots and "dead zones".
+    \item The dashboard provides reports on the most popular equipment and peak usage times.
+    \item The owner analyzes the visual intelligence to identify overcrowded areas or underutilized assets.
+    \item The owner makes informed decisions regarding facility layout optimization or future capital expenditures.
+\end{enumerate}
+
+\textbf{Extensions (Alternative Flows):}
+\begin{itemize}
+    \item \textbf{4a. Operational Optimization:} The owner identifies traffic trends to adjust staffing or cleaning schedules based on real-time traffic volume.
+    \item \textbf{7a. CapEx De-Risking:} The owner decides to remove underused assets identified in "dead zones" to make space for higher-demand equipment.
 \end{itemize}
 
 \section{Use Case Diagrams}
@@ -77,7 +113,7 @@ The member-facing use cases focus on personal workout efficiency, progress track
 \begin{figure}[h]
     \centering
     % [PLACEHOLDER: Insert Member Use Case Diagram Image Here]
-    % \includegraphics[width=0.8\textwidth]{figures/member-use-case.png}
+    \includegraphics[width=0.8\textwidth]{figures/member-use-case.png}
     \caption{Use Case Diagram for Gym Members}
     \label{fig:member-use-case}
 \end{figure}
@@ -97,17 +133,17 @@ The owner-facing use cases prioritize spatial intelligence, facility optimizatio
 \begin{figure}[h]
     \centering
     % [PLACEHOLDER: Insert Owner Use Case Diagram Image Here]
-    % \includegraphics[width=0.8\textwidth]{figures/owner-use-case.png}
+    \includegraphics[width=0.8\textwidth]{figures/owner-use-case.png}
     \caption{Use Case Diagram for Gym Owners}
     \label{fig:owner-use-case}
 \end{figure}
 
 \begin{itemize}
-    \item \textbf{UC-7: Analyze Machine Traffic:} Provides a real-time overview of equipment usage states across the facility floor[cite: 20].
-    \item \textbf{UC-8: View Spatial Heatmaps:} Generates visual heatmaps to identify high-traffic hotspots and underutilized "dead zones"[cite: 23].
-    \item \textbf{UC-9: Generate Utilization Reports:} Accesses a historical database to produce daily, weekly, or monthly reports on equipment popularity and peak usage times[cite: 22].
-    \item \textbf{UC-10: Optimize Facility Layout:} Enables owners to make data-backed decisions on relocating assets to improve floor flow and utilization[cite: 23].
-    \item \textbf{UC-11: Manage Operational Schedules:} Helps owners optimize staffing, cleaning, and maintenance schedules based on real-time and historical traffic volume[cite: 25].
+    \item \textbf{UC-7: Analyze Machine Traffic:} Provides a real-time overview of equipment usage states across the facility floor.
+    \item \textbf{UC-8: View Spatial Heatmaps:} Generates visual heatmaps to identify high-traffic hotspots and underutilized "dead zones".
+    \item \textbf{UC-9: Generate Utilization Reports:} Accesses a historical database to produce daily, weekly, or monthly reports on equipment popularity and peak usage times.
+    \item \textbf{UC-10: Optimize Facility Layout:} Enables owners to make data-backed decisions on relocating assets to improve floor flow and utilization.
+    \item \textbf{UC-11: Manage Operational Schedules:} Helps owners optimize staffing, cleaning, and maintenance schedules based on real-time and historical traffic volume.
 \end{itemize}
 
 \subsection{System Use Case}

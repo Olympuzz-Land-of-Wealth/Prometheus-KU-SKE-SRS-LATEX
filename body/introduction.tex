@@ -4,28 +4,32 @@
 \section{Background}
 \label{section:background}
 
-The fitness industry has seen a significant surge in membership, yet the technological 
-infrastructure within gyms remains largely stagnant. Most facilities still rely on manual 
-equipment logging or basic membership check-ins. For members, the lack of real-time information 
-regarding equipment availability leads to inefficient workouts and "availability uncertainty." 
-For owners, the absence of granular data on how floor space is utilized results in suboptimal 
-equipment purchasing and layout decisions. With the advancement of Computer Vision and the ubiquity 
-of CCTV systems, there is a significant opportunity to transform passive video feeds into actionable 
-spatial intelligence.
+The fitness industry has seen a significant surge in membership, yet the technological infrastructure 
+within gyms remains largely stagnant. Most facilities still rely on basic membership check-ins, 
+leaving a massive data gap between the front desk and the gym floor. For members, the lack of real-time 
+information regarding equipment availability leads to inefficient workouts and "availability uncertainty." 
+For owners, the absence of granular data on how floor space is utilized results in suboptimal equipment 
+purchasing and layout decisions. With the advancement of Computer Vision and the ubiquity of CCTV systems, 
+there is a significant opportunity to transform passive video feeds into actionable spatial intelligence.
 
 \section{Problem Statement}
 \label{section:problem-statement}
 
-Current gym operations suffer from two primary inefficiencies:
+Current gym environments operate as "black boxes" once a member passes the front desk. This lack of 
+transparency creates two critical points of failure:
 
-1. Member Frustration: Users often find their planned equipment occupied upon arrival, 
-leading to routine disruption and decreased facility satisfaction.
+1. Dynamic Bottlenecks: Without real-time visibility, members experience "availability uncertainty." 
+This leads to routine disruption and peak-hour congestion that management cannot see or redirect, 
+directly impacting member retention.
 
-2. Operational Blind Spots: Gym owners lack objective data on equipment utilization 
-rates and "dead zones," forcing them to rely on guesswork for capital expenditure and floor plan optimization.
+2. Static Asset Management: Owners currently make high-stakes capital decisions—such as purchasing 
+five new treadmills or removing a power rack—based on anecdotal evidence rather than objective 
+occupancy data. This leads to "dead zones" where expensive square footage is underutilized, 
+and "over-taxed zones" where equipment wear-and-tear is accelerated.
 
-3. High Cost of Alternatives: Existing IoT sensor solutions are prohibitively expensive 
-to install and maintain on every individual machine in a high-traffic environment.
+3. Infrastructure Scalability: Traditional IoT solutions (individual machine sensors) are cost-prohibitive 
+and fragile in high-impact environments. There is currently no scalable way to capture floor-wide 
+spatial intelligence using existing infrastructure.
 
 \section{Solution Overview}
 \label{section:solution-overview}
@@ -36,13 +40,24 @@ analyze video streams to identify machine states (Free vs. Occupied). This metad
 synchronized to a cloud database, powering a real-time mobile tracker for members and a spatial 
 analytics dashboard for management.
 
+Prometheus bridges the gym’s "data gap" by transforming existing CCTV infrastructure into a real-time 
+spatial intelligence network. Using a privacy-first Edge-to-Cloud architecture, the system processes 
+video feeds locally to detect equipment occupancy without storing sensitive biometric data.
+
+The solution delivers value through two integrated touchpoints:
+
+1. For Management: A centralized analytics dashboard that maps high-traffic "heat zones" and equipment 
+duty cycles, enabling data-driven decisions on floor-plan optimization and capital expenditure.
+
+2. For Members: A real-time mobile interface that eliminates "availability uncertainty" by showing 
+live equipment status.
+
 \subsection{Features}
 \label{subsection:features}
 
 \begin{enumerate}[leftmargin=90pt]
     \item \textbf{Real-time Occupancy Tracker:} A live mobile interface showing which machines are currently in use or available to help members plan their sets.
     \item \textbf{Spatial Heatmaps:} A web-based visual representation of high-traffic areas and underutilized equipment for facility owners.
-    \item \textbf{AI Diet Estimator:} A database-driven tool that calculates nutritional needs and recommends food items based on user profiles.
     \item \textbf{Progress Logger:} A feature for members to record sets, reps, and weights, integrated with visual progress charts and historical data.
     \item \textbf{Workout Routine Generator:} An intelligent routine creator tailored to user goals, physical profile, and real-time equipment availability.
     \item \textbf{Automated Utilization Reports:} Weekly data summaries for owners regarding peak hours, machine popularity, and equipment ROI.
@@ -53,12 +68,12 @@ analytics dashboard for management.
 The Prometheus system is designed for two distinct demographics, with a primary focus on facility management and business intelligence:
 
 \begin{itemize}
-    \item \textbf{Primary Users (Gym Owners and Facility Managers):} These are the central stakeholders 
+    \item \textbf{Gym Owners and Facility Managers (Primary Users):} These are the central stakeholders 
     who utilize the system to drive operational efficiency. They require high-level spatial analytics to 
     identify equipment usage patterns, minimize "dead zones," and optimize facility layouts. By leveraging 
     the web-based dashboard, these users transform raw computer vision data into actionable business insights 
     to improve equipment Return on Investment (ROI) and long-term member retention.
-    \item \textbf{Secondary Users (Gym-goers):} Individual patrons who benefit from the downstream data 
+    \item \textbf{Gym-goers (Secondary Users):} Individual patrons who benefit from the downstream data 
     generated by the system. These users range from beginners to advanced athletes who utilize the mobile 
     interface to minimize wait times and follow AI-generated routines. While they are frequent interactors 
     with the platform, their experience is an extension of the primary analytical framework established for 
