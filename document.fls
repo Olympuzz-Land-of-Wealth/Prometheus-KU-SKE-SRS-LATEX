@@ -298,6 +298,13 @@ OUTPUT body\softwarearchitecture.aux
 INPUT .\body\softwarearchitecture.tex
 INPUT .\body\softwarearchitecture.tex
 INPUT body\softwarearchitecture.tex
+INPUT .\assets\figures\system-architecture.png
+INPUT .\assets\figures\system-architecture.png
+INPUT .\assets\figures\system-architecture.png
+INPUT .\assets\figures\system-architecture.png
+INPUT .\assets\figures\system-architecture.png
+INPUT .\assets\figures\system-architecture.png
+INPUT .\assets\figures\system-architecture.png
 INPUT C:\Users\Phasit\AppData\Local\Programs\MiKTeX\fonts\vf\adobe\times\zptmcm7y.vf
 INPUT C:\Users\Phasit\AppData\Local\Programs\MiKTeX\fonts\tfm\public\cm\cmsy10.tfm
 INPUT C:\Users\Phasit\AppData\Local\Programs\MiKTeX\fonts\tfm\adobe\symbol\psyr.tfm

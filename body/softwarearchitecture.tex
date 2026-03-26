@@ -5,6 +5,16 @@
 \label{section:architecture-overview}
 The Prometheus system follows a distributed Edge-to-Cloud architecture designed to balance real-time performance with data scalability. The architecture is composed of four primary layers: the Data Ingestion Layer (IP Cameras), the Edge Processing Layer (Inference Engine), the Cloud Service Layer (Data Management), and the Presentation Layer (Client Applications).
 
+As illustrated in Figure \ref{fig:system-architecture}, the process begins at the edge to ensure low latency and privacy. Metadata is then pushed to the cloud to serve the analytical needs of gym owners and the real-time needs of members.
+
+\begin{figure}[!ht]
+    \centering
+    \includegraphics[width=\textwidth]{assets/figures/system-architecture.png}
+    \caption{Prometheus Distributed Edge-to-Cloud System Architecture}
+    \label{fig:system-architecture}
+\end{figure}
+\clearpage
+
 The system begins with 5 HD IP cameras streaming high-definition video via RTSP to a local Edge Processing Unit (e.g., ASUS NUC). This unit performs real-time object detection and state classification, immediately discarding raw video frames to ensure member privacy. The resulting anonymized metadata is transmitted to a PostgreSQL-backed cloud database, which serves as the central repository for historical utilization data. Finally, the Presentation Layer delivers live availability updates to the iOS application and spatial heatmaps to the PC Web Dashboard.
 
 \section{Software Design}

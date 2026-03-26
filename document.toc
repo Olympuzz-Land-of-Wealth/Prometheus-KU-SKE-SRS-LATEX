@@ -36,24 +36,24 @@
 \contentsline {section}{\numberline {3.4}User Interface Design}{16}{section.3.4}%
 \contentsline {chapter}{Chapter \hbox to\@tempdima {4\hfil }\leftprotrusion Software Architecture Design}{19}{chapter.4}%
 \contentsline {section}{\numberline {4.1}System Architecture Overview}{19}{section.4.1}%
-\contentsline {section}{\numberline {4.2}Software Design}{19}{section.4.2}%
-\contentsline {section}{\numberline {4.3}AI and Data Design}{20}{section.4.3}%
-\contentsline {subsection}{\numberline {4.3.1}Data Sources and Collection}{20}{subsection.4.3.1}%
-\contentsline {subsection}{\numberline {4.3.2}Model Design}{21}{subsection.4.3.2}%
-\contentsline {subsection}{\numberline {4.3.3}Evaluation}{21}{subsection.4.3.3}%
-\contentsline {chapter}{Chapter \hbox to\@tempdima {5\hfil }\leftprotrusion Software Development}{22}{chapter.5}%
-\contentsline {section}{\numberline {5.1}Software Development Methodology}{22}{section.5.1}%
-\contentsline {section}{\numberline {5.2}Technology Stack}{22}{section.5.2}%
-\contentsline {section}{\numberline {5.3}Coding Standards}{23}{section.5.3}%
-\contentsline {section}{\numberline {5.4}Schedule}{23}{section.5.4}%
-\contentsline {subsection}{\numberline {5.4.1}Phase Descriptions}{25}{subsection.5.4.1}%
-\contentsline {section}{\numberline {5.5}Progress Tracking Report}{25}{section.5.5}%
-\contentsline {chapter}{Chapter \hbox to\@tempdima {6\hfil }\leftprotrusion Deliverables}{26}{chapter.6}%
-\contentsline {section}{\numberline {6.1}Software Solution}{26}{section.6.1}%
-\contentsline {section}{\numberline {6.2}Test Report}{26}{section.6.2}%
-\contentsline {chapter}{Chapter \hbox to\@tempdima {7\hfil }\leftprotrusion Conclusion and Discussion}{27}{chapter.7}%
-\contentsline {section}{\numberline {7.1}Summary of Achievements}{27}{section.7.1}%
-\contentsline {section}{\numberline {7.2}Known Limitations}{27}{section.7.2}%
-\contentsline {section}{\numberline {7.3}Future Work}{27}{section.7.3}%
-\contentsline {chapter}{Appendix A: Example}{30}{chapter*.8}%
-\contentsline {chapter}{Appendix B: About \LaTeX }{32}{chapter*.9}%
+\contentsline {section}{\numberline {4.2}Software Design}{21}{section.4.2}%
+\contentsline {section}{\numberline {4.3}AI and Data Design}{22}{section.4.3}%
+\contentsline {subsection}{\numberline {4.3.1}Data Sources and Collection}{22}{subsection.4.3.1}%
+\contentsline {subsection}{\numberline {4.3.2}Model Design}{22}{subsection.4.3.2}%
+\contentsline {subsection}{\numberline {4.3.3}Evaluation}{23}{subsection.4.3.3}%
+\contentsline {chapter}{Chapter \hbox to\@tempdima {5\hfil }\leftprotrusion Software Development}{24}{chapter.5}%
+\contentsline {section}{\numberline {5.1}Software Development Methodology}{24}{section.5.1}%
+\contentsline {section}{\numberline {5.2}Technology Stack}{24}{section.5.2}%
+\contentsline {section}{\numberline {5.3}Coding Standards}{25}{section.5.3}%
+\contentsline {section}{\numberline {5.4}Schedule}{25}{section.5.4}%
+\contentsline {subsection}{\numberline {5.4.1}Phase Descriptions}{27}{subsection.5.4.1}%
+\contentsline {section}{\numberline {5.5}Progress Tracking Report}{27}{section.5.5}%
+\contentsline {chapter}{Chapter \hbox to\@tempdima {6\hfil }\leftprotrusion Deliverables}{28}{chapter.6}%
+\contentsline {section}{\numberline {6.1}Software Solution}{28}{section.6.1}%
+\contentsline {section}{\numberline {6.2}Test Report}{28}{section.6.2}%
+\contentsline {chapter}{Chapter \hbox to\@tempdima {7\hfil }\leftprotrusion Conclusion and Discussion}{29}{chapter.7}%
+\contentsline {section}{\numberline {7.1}Summary of Achievements}{29}{section.7.1}%
+\contentsline {section}{\numberline {7.2}Known Limitations}{29}{section.7.2}%
+\contentsline {section}{\numberline {7.3}Future Work}{29}{section.7.3}%
+\contentsline {chapter}{Appendix A: Example}{32}{chapter*.8}%
+\contentsline {chapter}{Appendix B: About \LaTeX }{34}{chapter*.9}%
