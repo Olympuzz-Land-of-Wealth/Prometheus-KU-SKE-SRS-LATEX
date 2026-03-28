@@ -153,13 +153,44 @@ This automated use case represents the core AI functionality that enables the us
 \end{itemize}
 
 \section{User Interface Design}
-\label{section:user-interface-design}
-<TIP: Put the initial design of your application here. You can
-showcase a detailed design of a specific page or a sitemap of your application.
-See an example below./>
+
+\subsection{Web Application}
+\label{section:web-ui-design}
+
+The Prometheus Web App features a Camera Management dashboard with a live camera grid displaying AI-detected occupancy using bounding boxes. A status panel monitors edge processing performance and latency. The interface also includes spatial overlays for heatmaps and camera controls for easy zone calibration and equipment labeling.
 
 \begin{figure}[h]
     \centering
-    \includegraphics[width=0.8\textwidth]{examples/user-interface-design.png}
-    \caption{User Interface Design}
+    % [PLACEHOLDER: Insert Web UI Screenshot Here]
+    \includegraphics[width=0.9\textwidth]{assets/figures/web-ui.png}
+    \caption{Prometheus Web Application Interface (Owner Dashboard)}
+    \label{fig:web-ui}
+\end{figure}
+
+\subsection{Mobile Application}
+\label{section:mobile-ui-design}
+
+The Prometheus Mobile App provides real-time gym occupancy through a live capacity meter and a searchable equipment list with availability and wait times. Users can join a waitlist and receive notifications when machines become available, with filters for quick browsing by category.
+
+\begin{figure}[h]
+    \centering
+
+    \begin{subfigure}{0.45\textwidth}
+        \centering
+        % [PLACEHOLDER: Mobile UI Overview]
+        \includegraphics[width=\linewidth]{assets/figures/mobile-ui-1.png}
+        \caption{Overview}
+        \label{fig:mobile-ui-1}
+    \end{subfigure}
+    \hfill
+    \begin{subfigure}{0.45\textwidth}
+        \centering
+        % [PLACEHOLDER: Mobile UI Details]
+        \includegraphics[width=\linewidth]{assets/figures/mobile-ui-2.png}
+        \caption{Waitlist and Details}
+        \label{fig:mobile-ui-2}
+    \end{subfigure}
+
+    \caption{Prometheus Mobile Application Interface}
+    \label{fig:mobile-ui}
 \end{figure}
