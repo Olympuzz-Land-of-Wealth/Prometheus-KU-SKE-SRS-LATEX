@@ -1,0 +1,8 @@
+~\hfill \textbf {Page}\par \addvspace {.2in} \relax \fontsize {14.4}{17}\selectfont \abovedisplayskip 14\p@ plus3\p@ minus7\p@ \abovedisplayshortskip \z@ plus4\p@ \belowdisplayshortskip 7\p@ plus4\p@ minus3\p@ \belowdisplayskip \abovedisplayskip \let \leftmargin \leftmargini \parsep 4\p@ plus2\p@ minus\p@ \topsep 8\p@ plus2\p@ minus4\p@ \itemsep 4\p@ plus2\p@ minus\p@ \leftmargin \leftmargini \parsep 4\p@ plus2\p@ minus\p@ \topsep 8\p@ plus2\p@ minus4\p@ \itemsep 4\p@ plus2\p@ minus\p@ 
+\contentsline {figure}{\numberline {2.1}{\ignorespaces Competitive Landscape: Automation vs. Infrastructure Cost}}{6}{figure.caption.4}%
+\contentsline {figure}{\numberline {3.1}{\ignorespaces Use Case Diagram for Gym Members}}{17}{figure.caption.8}%
+\contentsline {figure}{\numberline {3.2}{\ignorespaces Use Case Diagram for Gym Owners}}{18}{figure.caption.9}%
+\contentsline {figure}{\numberline {3.3}{\ignorespaces Prometheus Web Application Interface (Owner Dashboard)}}{19}{figure.caption.10}%
+\contentsline {figure}{\numberline {3.4}{\ignorespaces Prometheus Mobile Application Interface}}{20}{figure.caption.11}%
+\contentsline {figure}{\numberline {4.1}{\ignorespaces Prometheus Distributed Edge-to-Cloud System Architecture}}{22}{figure.caption.12}%
+\contentsline {figure}{\numberline {5.1}{\ignorespaces Prometheus Project Gantt Chart: 16-Week Development Timeline}}{27}{figure.caption.13}%
