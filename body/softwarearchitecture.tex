@@ -15,7 +15,7 @@ As illustrated in Figure 4.1, the process begins at the edge to ensure low laten
 \end{figure}
 \clearpage
 
-The system begins with 5 HD IP cameras streaming high-definition video via RTSP to a local Edge Processing Unit (e.g., ASUS NUC). This unit performs real-time object detection and state classification, immediately discarding raw video frames to ensure member privacy. The resulting anonymized metadata is transmitted to a PostgreSQL-backed cloud database, which serves as the central repository for historical utilization data. Finally, the Presentation Layer delivers live availability updates to the iOS application and spatial heatmaps to the PC Web Dashboard.
+The system begins with 5 HD IP cameras streaming high-definition video via RTSP to a local Edge Processing Unit (e.g., ASUS NUC). This unit performs real-time object detection and state classification, immediately discarding raw video frames to ensure member privacy. The resulting anonymized metadata is transmitted to a PostgreSQL-backed \cite{postgresql:global} cloud database, which serves as the central repository for historical utilization data. Finally, the Presentation Layer delivers live availability updates to the iOS application and spatial heatmaps to the PC Web Dashboard.
 
 \section{Software Design}
 \label{section:software-design}
@@ -35,13 +35,13 @@ The runtime behavior of Prometheus is driven by a continuous inference loop. Whe
 \subsection{Data Sources and Collection}
 The Prometheus AI models are developed using a hybrid data strategy to ensure both general robustness and facility-specific accuracy:
 \begin{itemize}
-    \item \textbf{Public Benchmarks:} We utilize the M3GYM and QEVD datasets for baseline training. These sources provide millions of frames of traditional weightlifting and machine-based exercises from multiple CCTV-style angles.
+    \item \textbf{Public Benchmarks:} We utilize the M3GYM \cite{m3gym:dataset} and QEVD datasets for baseline training. These sources provide millions of frames of traditional weightlifting and machine-based exercises from multiple CCTV-style angles.
     \item \textbf{Self-Collected Data:} To fine-tune the model for the specific layout of local facilities (such as the KEFF gym), we collect approximately 2,000 frames of facility-specific equipment.
-    \item \textbf{Data Cleaning:} All training data undergoes perspective correction and manual annotation of "Free" vs. "Occupied" states. For privacy compliance, all human faces in the training set are blurred before being fed into the training pipeline.
+    \item \textbf{Data Cleaning:} All training data undergoes perspective correction and manual annotation of "Free" vs. "Occupied" states. For privacy compliance, all human faces in the training set are blurred before being fed into the training pipeline \cite{thailand:pdpa}.
 \end{itemize}
 
 \subsection{Model Design}
-The core of the Prometheus intelligence is based on the \textbf{YOLO (You Only Look Once)} architecture. We have selected \textbf{YOLOv10} as the primary model for deployment on the ASUS NUC edge hardware. 
+The core of the Prometheus intelligence is based on the \textbf{YOLO (You Only Look Once)} architecture \cite{ultralytics:yolov8}. We have selected \textbf{YOLOv10} \cite{wang2024yolov10}  as the primary model for deployment on the ASUS NUC edge hardware. 
 \begin{itemize}
     \item \textbf{Reasoning:} YOLOv10 was chosen over traditional R-CNN models because it offers the highest inference speed (frames per second) while maintaining the precision necessary for occupancy detection. Furthermore, YOLOv10's architecture eliminates Non-Maximum Suppression (NMS) overhead, which is critical for running multiple camera streams on a single edge device.
     \item \textbf{Integration:} The model is integrated into the system via an ONNX or TensorRT execution provider to maximize the utilization of the edge unit's GPU/NPU.

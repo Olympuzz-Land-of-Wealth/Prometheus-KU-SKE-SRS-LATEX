@@ -347,6 +347,9 @@ INPUT C:\Users\Phasit\AppData\Local\Programs\MiKTeX\fonts\tfm\adobe\times\ptmr8t
 INPUT C:\Users\Phasit\AppData\Local\Programs\MiKTeX\fonts\tfm\adobe\times\ptmb8t.tfm
 INPUT C:\Users\Phasit\AppData\Local\Programs\MiKTeX\fonts\vf\adobe\times\ptmb8t.vf
 INPUT C:\Users\Phasit\AppData\Local\Programs\MiKTeX\fonts\tfm\adobe\times\ptmb8r.tfm
+INPUT .\document.bbl
+INPUT .\document.bbl
+INPUT document.bbl
 INPUT document.aux
 INPUT .\partials\cover.aux
 INPUT .\partials\cover.aux

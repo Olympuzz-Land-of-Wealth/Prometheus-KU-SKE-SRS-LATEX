@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.29 (MiKTeX 26.2) (preloaded format=pdflatex 2026.3.10)  29 MAR 2026 22:13
+This is pdfTeX, Version 3.141592653-2.6-1.40.29 (MiKTeX 26.2) (preloaded format=pdflatex 2026.3.10)  29 MAR 2026 23:46
 entering extended mode
  restricted \write18 enabled.
  file:line:error style messages enabled.
@@ -610,6 +610,10 @@ l.30 3
 
 
 ]
+
+LaTeX Warning: Citation `thailand:pdpa' on page 2 undefined on input line 45.
+
+
 pdfTeX warning (ext4): destination with the same identifier (name{page.2}) has been already used, duplicate ignored
 <to be read again> 
                    \relax 
@@ -618,7 +622,11 @@ l.61     \item \textbf
 LaTeX Font Info:    Trying to load font information for TS1+ptm on input line 71.
  (C:\Users\Phasit\AppData\Local\Programs\MiKTeX\tex/latex/psnfss\ts1ptm.fd
 File: ts1ptm.fd 2001/06/04 font definitions for TS1/ptm.
-) [3]) [4]
+) [3]
+
+LaTeX Warning: Citation `ultralytics:yolov8' on page 4 undefined on input line 87.
+
+) [4]
 \openout2 = `body/relatedworks.aux'.
 
  (body/relatedworks.tex
@@ -683,7 +691,21 @@ Underfull \vbox (badness 10000) has occurred while \output is active []
 
 
 
-] [6 <./assets/figures/Competitor.png>] [7]
+]
+
+LaTeX Warning: Citation `ultralytics:yolov8' on page 6 undefined on input line 46.
+
+
+LaTeX Warning: Citation `wang2024yolov10' on page 6 undefined on input line 46.
+
+[6 <./assets/figures/Competitor.png>]
+
+LaTeX Warning: Citation `m3gym:dataset' on page 7 undefined on input line 52.
+
+
+LaTeX Warning: Citation `thailand:pdpa' on page 7 undefined on input line 55.
+
+[7]
 Underfull \vbox (badness 1132) has occurred while \output is active []
 
  [8]) [9]
@@ -691,6 +713,9 @@ Underfull \vbox (badness 1132) has occurred while \output is active []
 
  (body/requirementanalysis.tex
 Chapter 3.
+
+LaTeX Warning: Citation `thailand:pdpa' on page 10 undefined on input line 12.
+
 [10
 
 
@@ -706,12 +731,14 @@ Package pdftex.def Info: ./assets/figures/member-use-case.png  used on input lin
 LaTeX Warning: `h' float specifier changed to `ht'.
 
 [14]
+
+LaTeX Warning: Citation `thailand:pdpa' on page 15 undefined on input line 126.
+
 <./assets/figures/owner-use-case.png, id=142, 3252.15pt x 2910.875pt>
 File: ./assets/figures/owner-use-case.png Graphic file (type png)
 <use ./assets/figures/owner-use-case.png>
 Package pdftex.def Info: ./assets/figures/owner-use-case.png  used on input line 136.
 (pdftex.def)             Requested size: 334.60422pt x 299.45482pt.
-
 
 LaTeX Warning: `h' float specifier changed to `ht'.
 
@@ -756,11 +783,28 @@ LaTeX Warning: Float too large for page by 16.45808pt on input line 15.
 
 
 ] [22 <./assets/figures/system-architecture.png>]
+
+LaTeX Warning: Citation `postgresql:global' on page 23 undefined on input line 18.
+
+
 Underfull \vbox (badness 3354) has occurred while \output is active []
 
  [23
 
-] [24]) [25]
+]
+
+LaTeX Warning: Citation `m3gym:dataset' on page 24 undefined on input line 38.
+
+
+LaTeX Warning: Citation `thailand:pdpa' on page 24 undefined on input line 40.
+
+
+LaTeX Warning: Citation `ultralytics:yolov8' on page 24 undefined on input line 44.
+
+
+LaTeX Warning: Citation `wang2024yolov10' on page 24 undefined on input line 44.
+
+[24]) [25]
 \openout2 = `body/softwaredevelopment.aux'.
 
  (body/softwaredevelopment.tex
@@ -780,11 +824,14 @@ Package pdftex.def Info: assets/figures/Schedule.png  used on input line 30.
 
 
 
-] (document.aux (partials/cover.aux) (partials/innercover.aux) (body/introduction.aux) (body/relatedworks.aux) (body/requirementanalysis.aux) (body/softwarearchitecture.aux) (body/softwaredevelopment.aux))
+] (document.bbl) (document.aux (partials/cover.aux) (partials/innercover.aux) (body/introduction.aux) (body/relatedworks.aux) (body/requirementanalysis.aux) (body/softwarearchitecture.aux) (body/softwaredevelopment.aux))
  ***********
 LaTeX2e <2025-11-01>
 L3 programming layer <2026-01-19>
  ***********
+
+
+LaTeX Warning: There were undefined references.
 
 
 LaTeX Warning: Label(s) may have changed. Rerun to get cross-references right.
@@ -799,15 +846,15 @@ Package rerunfilecheck Info: Checksums for `document.out':
 (rerunfilecheck)             After:  2B451B196F7464E93132A90C65511CAE;7504.
  ) 
 Here is how much of TeX's memory you used:
- 16000 strings out of 467867
- 276932 string characters out of 5417850
- 703463 words of memory out of 5000000
- 44210 multiletter control sequences out of 15000+600000
- 702400 words of font info for 322 fonts, out of 8000000 for 9000
+ 16001 strings out of 467867
+ 277023 string characters out of 5417850
+ 703422 words of memory out of 5000000
+ 44211 multiletter control sequences out of 15000+600000
+ 702273 words of font info for 320 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
  75i,12n,79p,1057b,611s stack positions out of 10000i,1000n,20000p,200000b,200000s
 <C:/Users/Phasit/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmmi10.pfb><C:/Users/Phasit/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmsy10.pfb><C:/Users/Phasit/AppData/Local/Programs/MiKTeX/fonts/type1/urw/times/utmb8a.pfb><C:/Users/Phasit/AppData/Local/Programs/MiKTeX/fonts/type1/urw/times/utmr8a.pfb>
-Output written on document.pdf (34 pages, 3261992 bytes).
+Output written on document.pdf (34 pages, 3262664 bytes).
 PDF statistics:
  287 PDF objects out of 1000 (max. 8388607)
  111 named destinations out of 1000 (max. 500000)
